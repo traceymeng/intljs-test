@@ -11,8 +11,8 @@ var url = "https://github.com/jeffreymeng/home/blob/gh-pages/js/hi.js";
 var cache = true;
 
 
-//generate rawgit url
-url = url.replace("https://github.com/", "https://cdn.rawgit.com/").replace("blob/", "");
+//generate raw github url
+url = url.replace("https://github.com/", "https://raw.githubusercontent.com").replace("blob/", "");
 $.ajax({
         url: url,
         dataType: "script",
