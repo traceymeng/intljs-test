@@ -5,15 +5,17 @@
     
 
 //options
-//github url to the javascript file
-var url = "/js/5.conventions.js";
+//list of urls to the file
+var url = ["/js/5.conventions.js"];
 //wether to cache the script or not
 var cache = true;
 
 
 //generate rawgit url
-$.ajax({
-        url: url,
+
+for (i = 0; i < url.length; i ++) {
+    $.ajax({
+        url: url[i],
         dataType: "script",
         cache: cache
     }).done(function(script, textStatus) {
@@ -24,5 +26,7 @@ $.ajax({
         //error
         console.log("Failed to load script at " + url + ".");
     });
+
+}
 
 </script>
