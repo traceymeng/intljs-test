@@ -6,13 +6,12 @@
 
 //options
 //github url to the javascript file
-var url = "https://github.com/jeffreymeng/home/blob/gh-pages/js/hi.js";
+var url = "/js/5.conventions.js";
 //wether to cache the script or not
 var cache = true;
 
 
 //generate rawgit url
-url = url.replace("https://github.com/", "https://raw.githubusercontent.com/").replace("blob/", "");
 $.ajax({
         url: url,
         dataType: "script",
