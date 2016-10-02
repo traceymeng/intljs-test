@@ -1,0 +1,29 @@
+<!-- Jquery 2.2.4 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+    
+
+//options
+//github url to the javascript file
+var url = "https://github.com/jeffreymeng/home/blob/gh-pages/js/hi.js";
+//wether to cache the script or not
+var cache = true;
+
+
+//generate rawgit url
+url = url.replace("https://github.com/", "https://cdn.rawgit.com/").replace("blob/", "");
+$.ajax({
+        url: url,
+        dataType: "script",
+        cache: cache
+    }).done(function(script, textStatus) {
+        //success
+        console.log("successfully loaded script at " + url + ".");
+    })
+    .fail(function(jqxhr, settings, exception) {
+        //error
+        console.log("Failed to load script at " + url + ".");
+    });
+
+</script>
