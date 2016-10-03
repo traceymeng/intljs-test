@@ -21,6 +21,10 @@ for (i = 0; i < urls.length; i ++) {
     }).done(function(script, textStatus) {
         //success
         console.log("successfully loaded script at " + urls[i] + ".");
+        if (i >= urls.length) {
+            main();
+        }
+        
     })
     .fail(function(jqxhr, settings, exception) {
         //error
@@ -28,5 +32,9 @@ for (i = 0; i < urls.length; i ++) {
     });
 
 }
-hi("Tracey");
+function main() {
+    hi("Tracey");
+
+}
+    
 </script>
