@@ -25,9 +25,9 @@ for (i = 0; i < urls.length; i ++) {
         cache: cache
     }).done(function(script, textStatus) {
         //success
-        console.log(script);
         
-        console.log("successfully loaded script at " + urls[i] + ".");
+        
+        //console.log("successfully loaded script at " + urls[i] + ".");
         if (i === urls.length - 1) {
             main();
         }
