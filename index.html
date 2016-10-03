@@ -2,7 +2,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
 <script>
-    
+function main() {
+    hi("Tracey");
+
+}    
 
 //options
 //list of urls to the file
@@ -13,12 +16,16 @@ var cache = false;
 
 
 for (i = 0; i < urls.length; i ++) {
+    console.log(urls[i]);
+    console.log(urls)
     $.ajax({
         url: urls[i],
         dataType: "script",
         cache: cache
     }).done(function(script, textStatus) {
         //success
+        console.log(script);
+        
         console.log("successfully loaded script at " + urls[i] + ".");
         if (i === urls.length - 1) {
             main();
@@ -31,9 +38,6 @@ for (i = 0; i < urls.length; i ++) {
     });
 
 }
-function main() {
-    hi("Tracey");
 
-}
     
 </script>
