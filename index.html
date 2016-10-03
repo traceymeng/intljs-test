@@ -14,12 +14,15 @@ var urls = ["https://www.jeffkmeng.com/js/hi.js"];
 var cache = false;
 
 
-
+var lastIlteration = false;
 for (i = 0; i < urls.length; i ++) {
-    console.log(i);
-    console.log(urls[i]);
-    console.log(urls)
-    console.log(urls.length)
+    //console.log(i);
+    //console.log(urls[i]);
+    //console.log(urls)
+    //console.log(urls.length)
+    if (i == urls.length - 1) {
+        lastIlteration = true;
+    }
     $.ajax({
         url: urls[i],
         dataType: "script",
@@ -28,12 +31,12 @@ for (i = 0; i < urls.length; i ++) {
         //success
         
         
-        //console.log("successfully loaded script at " + urls[i] + ".");
-        console.log(i);
-        console.log(urls.length);
-        console.log(urls.length - 1);
-        console.log(i === (urls.length - 1));
-        if (i == urls.length - 1) {
+        console.log("successfully loaded script at " + urls[i] + ".");
+        //console.log(i);
+        //console.log(urls.length);
+        //console.log(urls.length - 1);
+        //console.log(i === (urls.length - 1));
+        if (lastIlteration) {
             main();
         }
         
